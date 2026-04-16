@@ -1,0 +1,48 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  color: var(--color-content-tertiary);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--color-fill-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.iconSlot {
+  display: flex;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--color-content-tertiary);
+}
+
+.label {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  line-height: var(--text-primary-line-height);
+  letter-spacing: var(--text-primary-letter-spacing);
+  color: var(--color-content-tertiary);
+  white-space: nowrap;
+}
+
+.chevron {
+  display: flex;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--color-content-tertiary);
+}

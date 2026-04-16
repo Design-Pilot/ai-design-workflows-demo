@@ -1,0 +1,47 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  width: 100%;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff6ec7 0%, #c026d3 55%, #7e22ce 100%);
+}
+
+.textGroup {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  line-height: var(--text-primary-line-height);
+  letter-spacing: var(--text-primary-letter-spacing);
+  color: var(--color-content-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email {
+  font-family: var(--font-family);
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-tertiary-weight);
+  line-height: var(--text-tertiary-line-height);
+  letter-spacing: var(--text-tertiary-letter-spacing);
+  color: var(--color-content-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

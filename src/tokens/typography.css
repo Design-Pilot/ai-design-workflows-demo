@@ -1,0 +1,27 @@
+:root {
+  --font-family: var(--font-momo, system-ui, -apple-system, sans-serif);
+
+  /* H1 */
+  --text-h1-size: 17px;
+  --text-h1-weight: 600;
+  --text-h1-line-height: 22px;
+  --text-h1-letter-spacing: 0px;
+
+  /* Primary */
+  --text-primary-size: 14px;
+  --text-primary-weight: 500;
+  --text-primary-line-height: 20px;
+  --text-primary-letter-spacing: -0.3px;
+
+  /* Secondary */
+  --text-secondary-size: 14px;
+  --text-secondary-weight: 400;
+  --text-secondary-line-height: 20px;
+  --text-secondary-letter-spacing: -0.3px;
+
+  /* Tertiary */
+  --text-tertiary-size: 12px;
+  --text-tertiary-weight: 500;
+  --text-tertiary-line-height: 16px;
+  --text-tertiary-letter-spacing: 0px;
+}

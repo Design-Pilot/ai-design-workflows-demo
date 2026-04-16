@@ -1,0 +1,45 @@
+:root {
+  /* Neutrals */
+  --raw-neutral-0: #FFFFFF;
+  --raw-neutral-50: #F7F7F5;
+  --raw-neutral-100: #F1F1EF;
+  --raw-neutral-200: #D3D3D3;
+  --raw-neutral-300: #C7C6C4;
+  --raw-neutral-400: #9C9C9A;
+  --raw-neutral-500: #7F7F7F;
+  --raw-neutral-600: #5F5E5B;
+  --raw-neutral-700: #373737;
+  --raw-neutral-800: #252525;
+  --raw-neutral-850: #202020;
+  --raw-neutral-900: #1D1B16;
+  --raw-neutral-950: #191919;
+
+  /* Blue */
+  --raw-blue-100: #D3E5EF;
+  --raw-blue-500: #2383E2;
+  --raw-blue-800: #183347;
+  --raw-blue-900: #143A4E;
+
+  /* Green */
+  --raw-green-100: #DBEDDB;
+  --raw-green-800: #243D30;
+  --raw-green-900: #1C3829;
+
+  /* Yellow */
+  --raw-yellow-100: #FDECC8;
+  --raw-yellow-800: #564328;
+  --raw-yellow-900: #402C1B;
+
+  /* Brown */
+  --raw-brown-100: #EEE0DA;
+  --raw-brown-800: #4A3228;
+  --raw-brown-900: #442A1E;
+
+  /* Alpha */
+  --raw-alpha-white-87: rgba(255, 255, 255, 0.87);
+  --raw-alpha-white-20: rgba(255, 255, 255, 0.20);
+  --raw-alpha-white-5: rgba(255, 255, 255, 0.05);
+  --raw-alpha-black-5: rgba(0, 0, 0, 0.05);
+  --raw-alpha-blue-14: rgba(35, 131, 226, 0.14);
+  --raw-alpha-blue-20: rgba(35, 131, 226, 0.20);
+}

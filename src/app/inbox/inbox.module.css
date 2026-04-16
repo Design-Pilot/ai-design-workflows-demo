@@ -1,0 +1,11 @@
+.themeWrapper {
+  min-height: 100vh;
+  background: var(--color-surface-base);
+  color: var(--color-content-primary);
+}
+
+.emailList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

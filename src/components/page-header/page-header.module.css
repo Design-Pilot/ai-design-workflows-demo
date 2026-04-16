@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg) var(--spacing-page-gutter);
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line-height);
+  letter-spacing: var(--text-h1-letter-spacing);
+  color: var(--color-content-primary);
+  white-space: nowrap;
+}

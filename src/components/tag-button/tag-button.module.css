@@ -1,0 +1,47 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-tertiary-weight);
+  line-height: var(--text-tertiary-line-height);
+  letter-spacing: var(--text-tertiary-letter-spacing);
+  flex-shrink: 0;
+  max-width: 120px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.neutral {
+  background: var(--color-tag-surface-neutral);
+  color: var(--color-content-secondary-alt);
+}
+
+.yellow {
+  background: var(--color-tag-surface-yellow);
+  color: var(--color-tag-content-yellow);
+}
+
+.green {
+  background: var(--color-tag-surface-green);
+  color: var(--color-tag-content-green);
+}
+
+.blue {
+  background: var(--color-tag-surface-blue);
+  color: var(--color-tag-content-blue);
+}
+
+.brown {
+  background: var(--color-tag-surface-brown);
+  color: var(--color-tag-content-brown);
+}

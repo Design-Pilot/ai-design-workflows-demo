@@ -1,0 +1,13 @@
+:root {
+  --spacing-none: 0px;
+  --spacing-mini: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 10px;
+  --spacing-nav: 12px;
+  --spacing-xl: 16px;
+  --spacing-filter: 24px;
+  --spacing-2xl: 40px;
+  --spacing-page-gutter: 62px;
+}

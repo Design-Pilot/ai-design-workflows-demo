@@ -1,0 +1,275 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-none) var(--spacing-2xl) var(--spacing-none) var(--spacing-xl);
+  height: var(--size-row-height);
+  cursor: pointer;
+  position: relative;
+}
+
+.root.selected {
+  padding-right: var(--spacing-none);
+}
+
+.root.selected .container {
+  padding-right: var(--spacing-2xl);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+  height: 100%;
+  border-radius: var(--radius-md);
+  background: transparent;
+}
+
+.root:hover .container,
+.root.selected .container {
+  background: var(--color-surface-base-hover);
+}
+
+.root.selected .container {
+  background: var(--color-surface-selected);
+}
+
+.root.selected:hover .container {
+  background: var(--color-surface-selected-hover);
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+  visibility: hidden;
+}
+
+.root:hover .checkboxContainer,
+.root.selected .checkboxContainer {
+  visibility: visible;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-none);
+}
+
+.unreadIndicator {
+  display: flex;
+  align-items: flex-start;
+  padding: 2px var(--spacing-xs) 0 0;
+  flex-shrink: 0;
+}
+
+.unreadDot {
+  width: var(--size-indicator);
+  height: var(--size-indicator);
+  border-radius: 50%;
+  background: var(--color-fill-blue);
+  flex-shrink: 0;
+}
+
+.unreadDotHidden {
+  visibility: hidden;
+}
+
+.messageDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  flex: 1;
+  min-width: 0;
+}
+
+.senderInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-xs);
+  width: 16vw;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.senderName {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  line-height: var(--text-primary-line-height);
+  letter-spacing: var(--text-primary-letter-spacing);
+  color: var(--color-content-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Used when 4+ senders: prefix truncates, suffix always visible */
+.senderNameGroup {
+  display: flex;
+  gap: var(--spacing-xs);
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  line-height: var(--text-primary-line-height);
+  letter-spacing: var(--text-primary-letter-spacing);
+  color: var(--color-content-primary);
+  white-space: nowrap;
+}
+
+.senderNamePrefix {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.senderNameSuffix {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.root.read .senderName {
+  font-weight: var(--text-secondary-weight);
+  opacity: 0.85;
+}
+
+.root.read .senderNameGroup {
+  font-weight: var(--text-secondary-weight);
+  opacity: 0.85;
+}
+
+.count {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-tertiary-weight);
+  line-height: var(--text-tertiary-line-height);
+  letter-spacing: var(--text-tertiary-letter-spacing);
+  color: var(--color-content-secondary);
+  flex-shrink: 0;
+}
+
+.messageInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.subject {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  line-height: var(--text-primary-line-height);
+  letter-spacing: var(--text-primary-letter-spacing);
+  color: var(--color-content-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  max-width: 75%;
+}
+
+.root.read .subject {
+  font-weight: var(--text-secondary-weight);
+  opacity: 0.85;
+}
+
+.preview {
+  font-size: var(--text-secondary-size);
+  font-weight: var(--text-secondary-weight);
+  line-height: var(--text-secondary-line-height);
+  letter-spacing: var(--text-secondary-letter-spacing);
+  color: var(--color-content-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.dateInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  flex-shrink: 0;
+}
+
+.labelsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.dateText {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-tertiary-weight);
+  line-height: var(--text-tertiary-line-height);
+  letter-spacing: var(--text-tertiary-letter-spacing);
+  color: var(--color-content-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 118px;
+  text-align: right;
+}
+
+/* Action bar overlays date info on hover */
+.actionBar {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-mini);
+  position: absolute;
+  right: var(--spacing-xs);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.actionButton {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-content-secondary);
+  transition: background 0.1s;
+}
+
+.actionButton:hover {
+  background: var(--color-surface-base-hover);
+}
+
+.root:hover {
+  padding-right: var(--spacing-none);
+}
+
+.root:hover .container {
+  padding-right: var(--spacing-2xl);
+}
+
+.root:hover .dateText {
+  visibility: hidden;
+}
+
+.root:hover .actionBar {
+  display: flex;
+}
