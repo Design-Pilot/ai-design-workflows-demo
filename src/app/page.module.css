@@ -1,0 +1,113 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-surface-base);
+  color: var(--color-content-primary);
+  font-family: var(--font-family);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.logo {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line-height);
+  color: var(--color-content-primary);
+}
+
+.playgroundLink {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-tertiary);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm, 6px);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.playgroundLink:hover {
+  background: var(--color-surface-base-hover);
+  color: var(--color-content-primary);
+}
+
+.main {
+  padding: var(--spacing-2xl);
+  max-width: 800px;
+}
+
+.eyebrow {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line-height);
+  color: var(--color-content-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  font-size: var(--text-secondary-size);
+  font-weight: 400;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-nav);
+  padding: var(--spacing-xl);
+  border-radius: 10px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-surface-sunken);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.card:hover {
+  background: var(--color-surface-base-hover);
+  border-color: var(--color-content-tertiary-alt);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-h1-weight);
+  font-family: var(--font-family);
+}
+
+.cardName {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-primary);
+}
+
+.cardMeta {
+  font-size: var(--text-tertiary-size);
+  color: var(--color-content-tertiary);
+}

@@ -1,0 +1,101 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-surface-base);
+  color: var(--color-content-primary);
+  font-family: var(--font-family);
+  padding: var(--spacing-2xl);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-tertiary);
+  text-decoration: none;
+  margin-bottom: var(--spacing-2xl);
+  transition: color 0.12s ease;
+}
+
+.back:hover {
+  color: var(--color-content-primary);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  color: #183347;
+  background: #D3E5EF;
+  padding: 2px var(--spacing-md);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-nav);
+}
+
+.title {
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line-height);
+  color: var(--color-content-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.description {
+  font-size: var(--text-secondary-size);
+  color: var(--color-content-tertiary);
+  max-width: 480px;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.demo {
+  display: flex;
+  gap: var(--spacing-2xl);
+  align-items: flex-start;
+}
+
+.navPanel {
+  width: 200px;
+  background: var(--color-surface-sunken);
+  border-radius: 10px;
+  border: 1px solid var(--color-border-default);
+  padding: var(--spacing-md) 0;
+}
+
+.navLabel {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-tertiary);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+}
+
+.swatches {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-nav);
+}
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--text-tertiary-size);
+  color: var(--color-content-tertiary);
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.hint {
+  font-size: var(--text-tertiary-size);
+  color: var(--color-content-tertiary);
+  margin-top: var(--spacing-nav);
+  font-style: italic;
+}
