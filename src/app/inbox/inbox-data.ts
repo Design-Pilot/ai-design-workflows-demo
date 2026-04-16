@@ -16,7 +16,7 @@ export const sidebarSections: NavSection[] = [
       { id: 'inbox', label: 'Inbox', count: 99, href: '/inbox' },
       { id: 'promotion', label: 'Promotion', count: 13, href: '/promotions' },
       { id: 'labels', label: 'Labels' },
-      { id: 'social', label: 'Social', count: 83 },
+      { id: 'social', label: 'Social', count: 83, href: '/socials' },
     ],
   },
   {
