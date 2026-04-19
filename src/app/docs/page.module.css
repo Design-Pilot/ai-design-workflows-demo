@@ -1,0 +1,100 @@
+.page {
+  padding: var(--spacing-2xl);
+  max-width: 900px;
+}
+
+.pageHeader {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.eyebrow {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: var(--text-h1-weight);
+  color: var(--color-content-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: var(--text-secondary-size);
+  line-height: 1.6;
+  color: var(--color-content-tertiary);
+  max-width: 520px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-sunken);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.card:not(.cardSoon):hover {
+  background: var(--color-surface-base-hover);
+  border-color: var(--color-content-tertiary-alt);
+}
+
+.cardSoon {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.cardCategory {
+  font-size: 10px;
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-content-tertiary);
+}
+
+.comingSoonBadge {
+  font-size: 10px;
+  font-weight: var(--text-h1-weight);
+  color: var(--color-content-tertiary);
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+
+.cardName {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-h1-weight);
+  color: var(--color-content-primary);
+}
+
+.cardDesc {
+  font-size: var(--text-tertiary-size);
+  color: var(--color-content-tertiary);
+  line-height: 1.5;
+  margin-top: var(--spacing-xs);
+}

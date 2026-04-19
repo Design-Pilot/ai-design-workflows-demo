@@ -1,0 +1,531 @@
+# page.module.css template
+
+Page-specific CSS rules for a generated component docs page. These are the rules that are NOT extracted into `_shared/docs-ui.module.css`. The extracted shared module owns: `.toggle*`, `.controlRow*`, `.controlLabel`, `.controlValue*`, `.demoItem`, `.demoMeta`, `.demoLabel`, `.demoNote`, `.demoCanvas`. Everything else in this template lives per-page because it participates in page layout or the API table.
+
+Token rule: every value references a custom property from `src/tokens/*`. Never emit raw hex / rgb / unexplained pixel literals.
+
+Copy this whole file as the starting point. Do not trim rules "just in case they're unused" — all of them are referenced by the template at [references/page-template.md](page-template.md).
+
+```css
+/* ── Two-column page wrapper ── */
+.pageWrapper {
+  display: flex;
+  gap: 48px;
+  padding: var(--spacing-2xl);
+  align-items: flex-start;
+}
+
+.pageContent {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Page header ── */
+.pageHeader {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.breadcrumb {
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: var(--text-h1-weight);
+  color: var(--color-content-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.description {
+  font-size: var(--text-secondary-size);
+  line-height: 1.6;
+  color: var(--color-content-tertiary);
+  max-width: 580px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border-default);
+  margin: var(--spacing-2xl) 0;
+}
+
+.section {
+  scroll-margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  color: var(--color-content-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.sectionSubtitle {
+  font-size: var(--text-secondary-size);
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ── Table of contents ── */
+.toc {
+  width: 168px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--spacing-2xl);
+  padding-top: 4px;
+}
+
+.tocTitle {
+  font-size: 11px;
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-sm);
+}
+
+.tocItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: var(--text-tertiary-size);
+  font-family: var(--font-family);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-tertiary);
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+  margin-bottom: 2px;
+  line-height: var(--text-primary-line-height);
+}
+
+.tocItem:hover {
+  color: var(--color-content-primary);
+  background: var(--color-surface-base-hover);
+}
+
+.tocItemActive {
+  color: var(--color-content-primary);
+  border-left-color: var(--color-fill-blue);
+}
+
+/* ── Preview ── */
+.previewOuter {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+}
+
+.previewToolbar {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--color-surface-sunken);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.themeGroup {
+  display: flex;
+  gap: 2px;
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.themeBtn {
+  padding: 3px var(--spacing-md);
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  font-family: var(--font-family);
+  color: var(--color-content-tertiary);
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.themeBtn:hover {
+  color: var(--color-content-primary);
+}
+
+.themeBtnActive {
+  background: var(--color-surface-elevated);
+  color: var(--color-content-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.previewCanvas {
+  background: var(--color-surface-base);
+  padding: var(--spacing-xl) 0;
+}
+
+/* ── Controls grid ── */
+.controlsGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.controlGroupStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.controlGroup {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+}
+
+.controlGroupTitle {
+  font-size: 11px;
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+/* ── Inputs ── */
+.textInput {
+  width: 100%;
+  font-size: var(--text-tertiary-size);
+  font-family: var(--font-family);
+  color: var(--color-content-primary);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  outline: none;
+  transition: border-color 0.1s ease;
+}
+
+.textInput:focus {
+  border-color: var(--color-fill-blue);
+}
+
+.numberInput {
+  width: 70px;
+}
+
+.select {
+  font-size: var(--text-tertiary-size);
+  font-family: var(--font-family);
+  color: var(--color-content-primary);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  outline: none;
+  cursor: pointer;
+}
+
+.selectSm {
+  width: 96px;
+  flex-shrink: 0;
+}
+
+/* ── Segmented control ── */
+.segmented {
+  display: flex;
+  width: 100%;
+  gap: 2px;
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.segBtn {
+  flex: 1;
+  padding: 3px var(--spacing-sm);
+  font-size: 11px;
+  font-weight: var(--text-tertiary-weight);
+  font-family: var(--font-family);
+  color: var(--color-content-tertiary);
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.segBtn:hover {
+  color: var(--color-content-primary);
+}
+
+.segBtnActive {
+  background: var(--color-surface-base);
+  color: var(--color-content-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Chip editor ── */
+.chipEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  min-height: 4px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 2px var(--spacing-sm);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-secondary);
+}
+
+.chipRemove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-content-tertiary);
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.chipRemove:hover {
+  color: var(--color-content-primary);
+}
+
+.chipInput {
+  font-size: var(--text-tertiary-size);
+  font-family: var(--font-family);
+  color: var(--color-content-primary);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.1s ease;
+}
+
+.chipInput:focus {
+  border-color: var(--color-fill-blue);
+}
+
+.chipInput::placeholder {
+  color: var(--color-content-tertiary-alt);
+}
+
+.chipAddRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.addBtn {
+  font-size: 11px;
+  font-weight: var(--text-primary-weight);
+  font-family: var(--font-family);
+  color: var(--color-fill-blue);
+  background: none;
+  border: 1px solid var(--color-fill-blue);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  cursor: pointer;
+  transition: background 0.1s ease;
+  white-space: nowrap;
+}
+
+.addBtn:hover {
+  background: var(--color-surface-sunken);
+}
+
+/* ── Demo list wrapper (items live in shared module) ── */
+.demoList {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── API table ── */
+.inlineCode {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.92em;
+  padding: 1px 6px;
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  color: var(--color-content-primary);
+}
+
+.apiTableWrapper {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.apiTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-tertiary-size);
+  font-family: var(--font-family);
+}
+
+.apiTh {
+  text-align: left;
+  font-size: 11px;
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-content-tertiary);
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--color-surface-sunken);
+  border-bottom: 1px solid var(--color-border-default);
+  white-space: nowrap;
+}
+
+.apiTable tbody tr {
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.apiTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+.apiTd {
+  padding: var(--spacing-md) var(--spacing-xl);
+  vertical-align: top;
+  color: var(--color-content-secondary);
+  line-height: 1.5;
+}
+
+.apiPropName {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 13px;
+  color: var(--color-content-primary);
+  font-weight: var(--text-primary-weight);
+}
+
+.apiRequired {
+  display: inline-block;
+  margin-left: var(--spacing-xs);
+  font-size: 10px;
+  font-weight: var(--text-h1-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-fill-blue);
+}
+
+.apiType {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px;
+  color: var(--color-content-secondary);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+.apiDash {
+  color: var(--color-content-tertiary-alt);
+}
+
+.apiDescription {
+  color: var(--color-content-secondary);
+  min-width: 280px;
+}
+
+/* ── Used In (atoms only) ── */
+.usedInGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.usedInCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-base);
+  text-decoration: none;
+  color: var(--color-content-primary);
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.usedInCard:hover {
+  background: var(--color-surface-base-hover);
+  border-color: var(--color-fill-blue);
+}
+
+.usedInCardDisabled,
+.usedInCardDisabled:hover {
+  background: var(--color-surface-sunken);
+  border-color: var(--color-border-default);
+  color: var(--color-content-tertiary);
+  cursor: not-allowed;
+}
+
+.usedInName {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+}
+
+.usedInArrow {
+  font-size: var(--text-secondary-size);
+  color: var(--color-content-tertiary);
+}
+
+.usedInCard:hover .usedInArrow {
+  color: var(--color-fill-blue);
+}
+
+.usedInSoon {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-content-tertiary-alt);
+}
+
+.usedInEmpty {
+  font-size: var(--text-secondary-size);
+  color: var(--color-content-tertiary);
+  padding: var(--spacing-xl);
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+```
