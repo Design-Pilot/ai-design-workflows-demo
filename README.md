@@ -28,14 +28,16 @@ You don't need to be a developer to use it. You **do** need a few tools installe
 
 ## What you can do with this project
 
-| You want to… | Open this | Or run this skill |
-|---|---|---|
-| Browse the component library with live previews and controls | `/docs` in the browser | — |
-| See a full working email inbox (light + dark mode) | `/inbox` | — |
-| Drop a real, configured Email Row into your Figma file | — | `/figma-create-email-row` |
-| Build a full Inbox screen in Figma with grouped emails and realistic dates | — | `/figma-create-email-row` (Mode B) |
-| Generate an interactive docs page for a component (like the Email Row one) | — | `/document-component` |
-| Experiment with UI ideas without touching the design system | `/prototypes/chethan` or `/prototypes/sarah` | — |
+
+| You want to…                                                               | Open this                                    | Or run this skill                  |
+| -------------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------- |
+| Browse the component library with live previews and controls               | `/docs` in the browser                       | —                                  |
+| See a full working email inbox (light + dark mode)                         | `/inbox`                                     | —                                  |
+| Drop a real, configured Email Row into your Figma file                     | —                                            | `/figma-create-email-row`          |
+| Build a full Inbox screen in Figma with grouped emails and realistic dates | —                                            | `/figma-create-email-row` (Mode B) |
+| Generate an interactive docs page for a component (like the Email Row one) | —                                            | `/document-component`              |
+| Experiment with UI ideas without touching the design system                | `/prototypes/chethan` or `/prototypes/sarah` | —                                  |
+
 
 ---
 
@@ -46,16 +48,14 @@ You'll need:
 1. **Node.js 20+** — [nodejs.org](https://nodejs.org). Required to run the Next.js app.
 2. **Figma desktop app** — the skills write to Figma via MCP, which only works with the desktop app open.
 3. **An AI coding agent** — one of:
-   - [Claude Code](https://claude.com/claude-code) (recommended — this is where the skills were built)
-   - [Cursor](https://cursor.com)
-   - [Codex](https://developers.openai.com/codex)
-   - [Antigravity](https://antigravity.google.com) (should also work — convention not fully verified)
+  - [Claude Code](https://claude.com/claude-code) (recommended — this is where the skills were built)
+  - [Cursor](https://cursor.com)
+  - [Codex](https://developers.openai.com/codex)
+  - [Antigravity](https://antigravity.google.com) (should also work — convention not fully verified)
 4. **Figma MCP access** — two MCP servers need to be connected in your agent:
-   - **Official Figma MCP** (`use_figma`) — for writes to Figma files.
-   - **Figma Console MCP** — for live screenshot verification.
-
+  - **Official Figma MCP** (`use_figma`) — for writes to Figma files.
+  - **Figma Console MCP** — for live screenshot verification.
    In Claude Code, check `/mcp` to confirm both are listed. In Cursor / Codex / Antigravity, configure MCP servers per their docs.
-
 5. **Access to the Figma file** — the skills target the `Figma MCP - Notion Mail` file (file key `HvPhpLOICspP0CD05ST9fL`). You need edit access. If you want to run against your own Figma file, see [Using your own Figma file](#using-your-own-figma-file).
 
 ---
@@ -93,17 +93,19 @@ npm run lint    # eslint
 
 ## Routes — what you'll see in the browser
 
-| Route | What it is | Who it's for |
-|---|---|---|
-| `/` | Redirects to `/docs` | — |
-| `/docs` | Design-system home: grid of ready and "Soon" components | Everyone |
-| `/docs/components/email-row` | The canonical docs page — header, **interactive preview with live controls**, variants, behaviors, API table, sticky TOC | Designers, PMs, engineers |
-| `/docs/atoms/tag-button` | Same docs pattern, smaller surface | Same |
-| `/inbox` | Full working Notion Mail inbox: sidebar, filters, grouped emails, hover actions, light/dark toggle (keyboard: `T`) | Best "demo this to a stakeholder" surface |
-| `/promotions` | Promotions tab demo | Same |
-| `/socials` | Socials tab demo | Same |
-| `/prototypes/chethan` | Individual designer's experiments (e.g., `hover-experiment`) | Anyone exploring ideas |
-| `/prototypes/sarah` | Empty playground scaffolded for Sarah | — |
+
+| Route                        | What it is                                                                                                               | Who it's for                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| `/`                          | Redirects to `/docs`                                                                                                     | —                                         |
+| `/docs`                      | Design-system home: grid of ready and "Soon" components                                                                  | Everyone                                  |
+| `/docs/components/email-row` | The canonical docs page — header, **interactive preview with live controls**, variants, behaviors, API table, sticky TOC | Designers, PMs, engineers                 |
+| `/docs/atoms/tag-button`     | Same docs pattern, smaller surface                                                                                       | Same                                      |
+| `/inbox`                     | Full working Notion Mail inbox: sidebar, filters, grouped emails, hover actions, light/dark toggle (keyboard: `T`)       | Best "demo this to a stakeholder" surface |
+| `/promotions`                | Promotions tab demo                                                                                                      | Same                                      |
+| `/socials`                   | Socials tab demo                                                                                                         | Same                                      |
+| `/prototypes/chethan`        | Individual designer's experiments (e.g., `hover-experiment`)                                                             | Anyone exploring ideas                    |
+| `/prototypes/sarah`          | Empty playground scaffolded for Sarah                                                                                    | —                                         |
+
 
 The Interactive Preview on the Email Row docs page is the most useful thing to show a stakeholder — every prop is a live control, and the URL/hash updates so you can link to a specific configuration.
 
@@ -123,11 +125,13 @@ It has **two modes**:
 **How it talks to Figma:** via the Official Figma MCP (`use_figma`) for writes, and the Figma Console MCP for live screenshots — the skill screenshots its own work and iterates up to 3 times if it spots issues. You'll see those screenshots in the chat.
 
 **What it asks you before writing:**
+
 - Which preset (Mode A) or how many groups/rows (Mode B).
 - Where to place the instance — select an empty frame or let it pick an empty area.
 - A final confirmation summary before any Figma writes.
 
 **Triggers:**
+
 - Slash: `/figma-create-email-row`
 - Natural language: "create an email row", "design an email row", "create inbox", "full inbox template", "email inbox with groups"
 
@@ -145,11 +149,13 @@ It has **two modes**:
 It also flips the sidebar entry from "Soon" → active, runs lint, and verifies the page renders without errors.
 
 **What it asks you:**
+
 - One-paragraph component description (if not obvious from source).
 - Which Behaviors sections to include (it proposes candidates).
 - Confirmation before writing files.
 
 **Triggers:**
+
 - Slash: `/document-component`
 - Natural language: "document component", "generate docs for tag-button", "update docs for checkbox"
 
@@ -238,20 +244,25 @@ No skills needed.
 ## Troubleshooting
 
 **The skills don't appear in my agent's slash menu.**
+
 - Make sure you opened the project folder at the repo root (not a subfolder).
 - Claude Code reads `.claude/skills/`. Cursor reads `.cursor/skills/`. Codex reads `.agents/skills/`. These are symlinks to the canonical `.claude/skills/` location. On Windows, symlinks may require enabling developer mode + `git config core.symlinks=true`.
 
-**`use_figma` fails with "not connected" or similar.**
+`**use_figma` fails with "not connected" or similar.**
+
 - Open the Figma desktop app and make sure the target file is open and focused.
 - In your agent, confirm the Figma MCP server is connected (`/mcp` in Claude Code).
 
 **Screenshots from the skill look stale.**
+
 - The skill uses the Figma Console MCP (live `exportAsync`) for screenshots, but falls back to REST if Console is disconnected. REST can be stale right after a write — if you see something wrong, ask the skill to re-capture.
 
-**`/document-component` says "component not found".**
+`**/document-component` says "component not found".**
+
 - The component must live at `src/components/<name>/<name>.tsx`. Check the folder name.
 
 **Dev server won't start.**
+
 - Make sure you ran `npm install`. Next.js 16 + React 19 require Node 20+.
 
 ---
@@ -297,3 +308,4 @@ For now, treat the Figma skill as a **demonstration of the pattern** — the `/d
 - Architecture, token layering, and Figma skill internals: [AGENTS.md](AGENTS.md)
 - How the Figma skill works step-by-step: [.claude/skills/figma-create-email-row/SKILL.md](.claude/skills/figma-create-email-row/SKILL.md)
 - How the docs generator works step-by-step: [.claude/skills/document-component/SKILL.md](.claude/skills/document-component/SKILL.md)
+
