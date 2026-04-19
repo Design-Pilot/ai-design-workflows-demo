@@ -123,6 +123,7 @@ const DEFAULT: {
   datePreset: 'today' | 'this-year' | 'past-year';
   isRead: boolean;
   isSelected: boolean;
+  count: number;
   showCategory: boolean;
   category: { label: string };
   showTrailingAssets: boolean;
