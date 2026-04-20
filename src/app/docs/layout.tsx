@@ -16,9 +16,14 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         <DocsNav />
 
         <div className={styles.sidebarFooter}>
-          <Link href="/inbox" className={styles.footerLink}>
-            Open Inbox →
-          </Link>
+          <div className={styles.footerLinks}>
+            <Link href="/inbox" className={styles.footerLink}>
+              Open Inbox →
+            </Link>
+            <Link href="/prototypes" className={styles.footerLink}>
+              Open Prototypes →
+            </Link>
+          </div>
         </div>
       </aside>
 

@@ -114,6 +114,12 @@
   border-top: 1px solid var(--color-border-default);
 }
 
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
 .footerLink {
   font-size: var(--text-tertiary-size);
   font-weight: var(--text-primary-weight);

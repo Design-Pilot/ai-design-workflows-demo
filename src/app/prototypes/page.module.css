@@ -1,0 +1,74 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-surface-base);
+  color: var(--color-content-primary);
+  font-family: var(--font-family);
+  padding: var(--spacing-2xl);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-tertiary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-tertiary);
+  text-decoration: none;
+  margin-bottom: var(--spacing-2xl);
+  transition: color 0.12s ease;
+}
+
+.back:hover {
+  color: var(--color-content-primary);
+}
+
+.title {
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line-height);
+  color: var(--color-content-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  font-size: var(--text-secondary-size);
+  color: var(--color-content-tertiary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 800px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  border-radius: 10px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-surface-sunken);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.card:hover {
+  background: var(--color-surface-base-hover);
+  border-color: var(--color-content-tertiary-alt);
+}
+
+.cardName {
+  font-size: var(--text-primary-size);
+  font-weight: var(--text-primary-weight);
+  color: var(--color-content-primary);
+}
+
+.cardDesc {
+  font-size: var(--text-tertiary-size);
+  color: var(--color-content-tertiary);
+  line-height: var(--text-primary-line-height);
+}
